@@ -31,3 +31,7 @@ node_modules/
 reports/
 cypress/
 playwright-report/
+
+# Exclude nested repo
+TransferVip2/
+TransferVip_V2/
