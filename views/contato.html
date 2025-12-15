@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Transfer VIP Tour</title>
+  <meta name="description" content="Entre em contato com Transfer VIP Tour. WhatsApp, telefone, email e formulário de contato. Atendimento 24 horas para transporte executivo e blindado no Rio de Janeiro.">
+  <meta name="keywords" content="contato transfer vip, whatsapp transporte, telefone transporte executivo, email transporte premium">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contato - Transfer VIP Tour">
+          <meta property="og:description" content="Entre em contato para orçamentos e reservas de transporte VIP executivo e blindado no Rio de Janeiro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://transferviptour.com.br/novo/views/contato.html">
+  <meta property="og:image" content="https://transferviptour.com.br/novo/assets/images/contato-vip.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/whatsapp-integration.js"></script>
+  <script type="module" src="/js/form-validator.js"></script>
+  <script type="module" src="/js/i18n.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contato - Transfer VIP Tour",
+    "description": "Formulário de contato e informações para Transfer VIP Tour",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Transfer VIP Tour",
+      "telephone": "+5521982428730",
+          "email": "transferviptourcontact@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR",
+        "addressRegion": "RJ",
+        "addressLocality": "Rio de Janeiro"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <div id="header-container"></div>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-vip-black to-black py-16 md:py-24 border-b border-vip-gold/20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-vip-gold to-vip-gold-dark mb-6">
+          <i class="fas fa-envelope-open text-white text-2xl"></i>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-poppins font-bold text-white mb-4" data-i18n="header.contact.title">Entre em <span class="gradient-text">Contato</span></h1>
+        <p class="text-lg md:text-xl text-gray-300" data-i18n="header.contact.subtitle">Orçamentos, reservas e atendimento 24h com equipe especializada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Options -->
+  <section class="section-spacing bg-white hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- WhatsApp -->
+        <div class="text-center animate-on-scroll">
+          <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fab fa-whatsapp text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-poppins font-bold text-vip-black mb-4">WhatsApp</h3>
+          <p class="text-gray-600 mb-6">
+            Atendimento imediato via WhatsApp Business.
+            Respostas rápidas e orçamentos em tempo real.
+          </p>
+          <button data-whatsapp="contact-page" data-service="Contato via Site"
+                  class="premium-button bg-green-500 hover:bg-green-600 w-full justify-center">
+            <i class="fab fa-whatsapp mr-2"></i>
+            Falar no WhatsApp
+          </button>
+          <p class="text-sm text-gray-500 mt-3">Disponível 24 horas</p>
+        </div>
+
+        <!-- Phone -->
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="w-20 h-20 bg-vip-gold rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-phone text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-poppins font-bold text-vip-black mb-4">Telefone</h3>
+          <p class="text-gray-600 mb-6">
+            Ligue para nossa central de atendimento.
+            Atendimento personalizado com consultores especializados.
+          </p>
+          <a href="tel:+5521982428730" class="premium-button w-full justify-center">
+            <i class="fas fa-phone mr-2"></i>
+            (21) 98242-8730
+          </a>
+          <p class="text-sm text-gray-500 mt-3">Segunda a Domingo - 24h</p>
+        </div>
+
+        <!-- Email -->
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-envelope text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-poppins font-bold text-vip-black mb-4">Email</h3>
+          <p class="text-gray-600 mb-6">
+            Envie suas dúvidas e solicitações detalhadas.
+            Respostas em até 2 horas durante o horário comercial.
+          </p>
+          <a href="mailto:transferviptourcontact@gmail.com" class="premium-button bg-blue-600 hover:bg-blue-700 w-full justify-center">
+            <i class="fas fa-envelope mr-2"></i>
+            Enviar Email
+          </a>
+          <p class="text-sm text-gray-500 mt-3">Resposta em até 2h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="section-spacing bg-vip-gray">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+          <h2 class="text-section-mobile md:text-section font-poppins font-bold text-vip-black mb-4 animate-on-scroll" data-i18n="contact.form.title">
+            Formulário de <span class="gradient-text">Contato</span>
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;" data-i18n="contact.form.subtitle">
+            Preencha o formulário abaixo e entraremos em contato em breve.
+            Todos os campos são obrigatórios para melhor atendê-lo.
+          </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Coluna Esquerda: Formulário -->
+        <div class="bg-white rounded-24 p-8 shadow-lg animate-on-scroll" style="animation-delay: 0.3s;">
+          <form id="contact-form" class="space-y-6">
+            <!-- Personal Information -->
+            <div class="grid grid-cols-1 gap-6">
+              <div>
+                <label for="nome" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.name">
+                  Nome Completo <span class="text-red-500">*</span>
+                </label>
+                <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors" placeholder="Seu nome completo" data-i18n="contact.form.placeholder.name">
+                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.name">Por favor, insira seu nome completo</span>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.email">
+                  Email <span class="text-red-500">*</span>
+                </label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors" placeholder="seu@email.com" data-i18n="contact.form.placeholder.email">
+                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.email">Por favor, insira um email válido</span>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="grid grid-cols-1 gap-6">
+              <div>
+                <label for="telefone" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.phone">
+                  Telefone <span class="text-red-500">*</span>
+                </label>
+                <input type="tel" id="telefone" name="telefone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors" placeholder="(21) 99999-9999" data-i18n="contact.form.placeholder.phone">
+                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.phone">Por favor, insira um telefone válido</span>
+              </div>
+
+
+            </div>
+
+            <!-- Service Details -->
+            <div>
+              <label for="servico" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.service">
+                Serviço de Interesse <span class="text-red-500">*</span>
+              </label>
+              <select id="servico" name="servico" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors">
+                <option value="" data-i18n="contact.form.option.service.select">Selecione um serviço</option>
+                <option value="Transfer Aeroporto" data-i18n="services.cards.airport.title">Transfer Aeroporto</option>
+                <option value="Transporte Corporativo" data-i18n="services.cards.corporate.title">Transporte Corporativo</option>
+                <option value="Eventos Especiais" data-i18n="services.cards.events.title">Eventos Especiais</option>
+                <option value="City Tour VIP" data-i18n="services.cards.city.title">City Tour VIP</option>
+                <option value="Shopping Tour" data-i18n="services.cards.shopping.title">Shopping Tour</option>
+                <option value="Reuniões de Negócios" data-i18n="services.cards.business.title">Reuniões de Negócios</option>
+                <option value="Transporte de Casamentos" data-i18n="contact.form.option.service.wedding">Transporte de Casamentos</option>
+                <option value="Outro" data-i18n="contact.form.option.service.other">Outro</option>
+              </select>
+              <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.service">Por favor, selecione um serviço</span>
+            </div>
+
+            <!-- Vehicle Preference -->
+            <div class="hidden">
+              <label for="veiculo" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.vehicle">Preferência de Veículo</label>
+              <select id="veiculo" name="veiculo" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors">
+                <option value="" data-i18n="contact.form.option.vehicle.select">Selecione um veículo (opcional)</option>
+                <option value="Mercedes S-Class">Mercedes S-Class</option>
+                <option value="BMW 7 Series">BMW 7 Series</option>
+                <option value="Audi A8">Audi A8</option>
+                <option value="Lexus ES 300h">Lexus ES 300h</option>
+                <option value="Genesis G80">Genesis G80</option>
+                <option value="Volvo S90">Volvo S90</option>
+                <option value="Toyota Fortuner Blindada">Toyota Fortuner Blindada</option>
+                <option value="Ford Ranger Blindada">Ford Ranger Blindada</option>
+                <option value="Chevrolet S10 Blindada">Chevrolet S10 Blindada</option>
+                <option value="Sem Preferência" data-i18n="contact.form.option.vehicle.nopref">Sem Preferência</option>
+              </select>
+            </div>
+
+            <!-- Date and Time -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="data" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.date">Data do Serviço <span class="text-red-500">*</span></label>
+                <input type="date" id="data" name="data" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors" min="2024-01-01">
+                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.date">Por favor, selecione uma data</span>
+              </div>
+
+              <div>
+                <label for="hora" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.time">Horário <span class="text-red-500">*</span></label>
+                <input type="time" id="hora" name="hora" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors">
+                <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.time">Por favor, selecione um horário</span>
+              </div>
+            </div>
+
+            <!-- Number of Passengers -->
+            <div>
+              <label for="passageiros" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.passengers">Número de Passageiros <span class="text-red-500">*</span></label>
+              <select id="passageiros" name="passageiros" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors">
+                <option value="" data-i18n="contact.form.option.passengers.select">Selecione</option>
+                <option value="1" data-i18n="contact.form.option.passengers.1">1 passageiro</option>
+                <option value="2" data-i18n="contact.form.option.passengers.2">2 passageiros</option>
+                <option value="3" data-i18n="contact.form.option.passengers.3">3 passageiros</option>
+                <option value="4" data-i18n="contact.form.option.passengers.4">4 passageiros</option>
+                <option value="5" data-i18n="contact.form.option.passengers.5">5 passageiros</option>
+                <option value="6" data-i18n="contact.form.option.passengers.6">6 passageiros</option>
+                <option value="7" data-i18n="contact.form.option.passengers.7">7 passageiros</option>
+                <option value="8+" data-i18n="contact.form.option.passengers.8plus">8 ou mais</option>
+              </select>
+              <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.passengers">Por favor, selecione o número de passageiros</span>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="mensagem" class="block text-sm font-semibold text-vip-black mb-2" data-i18n="contact.form.label.message">Mensagem <span class="text-red-500">*</span></label>
+              <textarea id="mensagem" name="mensagem" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-vip-gold focus:border-transparent transition-colors resize-none" placeholder="Descreva suas necessidades, local de embarque, destino e qualquer informação adicional..." data-i18n="contact.form.placeholder.message"></textarea>
+              <span class="error-message text-red-500 text-sm hidden" data-i18n="contact.form.error.message">Por favor, insira uma mensagem</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+              <button type="submit" id="submit-button"
+                      class="premium-button text-lg px-8 py-4 w-full md:w-auto">
+                <span class="button-text">
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  <span data-i18n="contact.form.submit">Send Request</span>
+                </span>
+                <span class="loading-text hidden">
+                  <i class="fas fa-spinner fa-spin mr-2"></i>
+                  <span data-i18n="contact.form.loading">Enviando...</span>
+                </span>
+              </button>
+
+              <!-- Success Message -->
+              <div id="success-message" class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                <div class="flex items-center">
+                  <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                  <div>
+                    <strong data-i18n="msg.success.title">Solicitação enviada com sucesso!</strong>
+                    <p class="text-sm mt-1" data-i18n="msg.success.body">Entraremos em contato em breve. Você também pode nos chamar diretamente no WhatsApp para um atendimento mais rápido.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Error Message -->
+              <div id="error-message" class="hidden mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+                <div class="flex items-center">
+                  <i class="fas fa-exclamation-circle text-red-500 mr-3"></i>
+                  <div>
+                    <strong data-i18n="msg.error.title">Erro ao enviar solicitação</strong>
+                    <p class="text-sm mt-1" data-i18n="msg.error.body">Por favor, tente novamente ou entre em contato diretamente pelo WhatsApp.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Coluna Direita: Informações de Contato -->
+        <div class="bg-white rounded-24 p-8 shadow-lg animate-on-scroll" style="animation-delay: 0.4s;">
+          <h3 class="text-xl font-poppins font-bold text-vip-black mb-6" data-i18n="contact.info.title">Informações de Contato</h3>
+          <p class="text-gray-600 mb-6" data-i18n="contact.info.subtitle">Fale conosco através dos canais abaixo ou visite nosso escritório.</p>
+
+          <div class="space-y-6">
+            <!-- Telefones -->
+            <div>
+              <h4 class="font-semibold text-vip-gold mb-3" data-i18n="contact.info.phones.title">
+                <i class="fas fa-phone mr-2"></i>Telefones
+              </h4>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>WhatsApp:</strong> (21) 98242-8730</li>
+                <li><strong>WhatsApp:</strong> (21) 96452-9598</li>
+                <li><strong>WhatsApp:</strong> (21) 96979-9366</li>
+              </ul>
+            </div>
+
+            <!-- E-mails -->
+            <div>
+              <h4 class="font-semibold text-vip-gold mb-3" data-i18n="contact.info.emails.title">
+                <i class="fas fa-envelope mr-2"></i>E-mails
+              </h4>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>Geral:</strong> transferviptourcontact@gmail.com</li>
+              </ul>
+            </div>
+
+            <!-- Endereço -->
+            <div>
+              <h4 class="font-semibold text-vip-gold mb-3" data-i18n="contact.info.address.title">
+                <i class="fas fa-map-marker-alt mr-2"></i>Endereço
+              </h4>
+              <p class="text-gray-700">
+                Rua Santana, 149 - Centro<br/>
+                Rio de Janeiro - RJ<br/>
+                CEP: 20230-260
+              </p>
+            </div>
+
+            <!-- Horário -->
+            <div>
+              <h4 class="font-semibold text-vip-gold mb-3" data-i18n="contact.info.hours.title">
+                <i class="fas fa-clock mr-2"></i>Horário de Atendimento
+              </h4>
+              <ul class="text-gray-700 space-y-2">
+                <li><strong>Segunda a Sexta:</strong> 07:00 às 22:00</li>
+                <li><strong>Sábados:</strong> 08:00 às 18:00</li>
+                <li><strong>Domingos:</strong> 08:00 às 16:00</li>
+              </ul>
+            </div>
+
+            <!-- Redes sociais -->
+            <div>
+              <h4 class="font-semibold text-vip-gold mb-4" data-i18n="contact.info.social.title">
+                <i class="fas fa-share-alt mr-2"></i>Redes Sociais
+              </h4>
+              <div class="flex gap-3 flex-wrap">
+                <a href="https://wa.me/5521982428730?text=Ol%C3%A1,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank"
+                   class="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition">
+                  <i class="fab fa-whatsapp mr-2 text-lg"></i> WhatsApp
+                </a>
+                <a href="https://www.instagram.com/transferviptour" target="_blank"
+                   class="inline-flex items-center px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition">
+                  <i class="fab fa-instagram mr-2 text-lg"></i> Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Information -->
+  <section class="section-spacing bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- FAQ -->
+        <div class="animate-on-scroll">
+          <h2 class="text-2xl font-poppins font-bold text-vip-black mb-6" data-i18n="contact.faq.title">Perguntas <span class="gradient-text">Frequentes</span></h2>
+
+          <div class="space-y-4">
+            <div class="border border-gray-200 rounded-lg p-4">
+              <button class="faq-toggle w-full text-left flex justify-between items-center">
+                <span class="font-semibold text-vip-black" data-i18n="contact.faq.q1.title">Qual é o tempo mínimo de antecedência para reservas?</span>
+                <i class="fas fa-chevron-down text-vip-gold transition-transform"></i>
+              </button>
+              <div class="faq-content hidden mt-3 text-gray-600" data-i18n="contact.faq.q1.answer">Recomendamos reservar com pelo menos 2 horas de antecedência para garantir disponibilidade. Para serviços VIP e blindados, sugerimos 24 horas de antecedência.</div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg p-4">
+              <button class="faq-toggle w-full text-left flex justify-between items-center">
+                <span class="font-semibold text-vip-black" data-i18n="contact.faq.q2.title">Os preços incluem pedágio e estacionamento?</span>
+                <i class="fas fa-chevron-down text-vip-gold transition-transform"></i>
+              </button>
+              <div class="faq-content hidden mt-3 text-gray-600" data-i18n="contact.faq.q2.answer">Sim, todos os nossos preços incluem pedágio, estacionamento e taxas. O valor apresentado é fechado, sem surpresas adicionais.</div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg p-4">
+              <button class="faq-toggle w-full text-left flex justify-between items-center">
+                <span class="font-semibold text-vip-black" data-i18n="contact.faq.q3.title">Aceitam cartão de crédito?</span>
+                <i class="fas fa-chevron-down text-vip-gold transition-transform"></i>
+              </button>
+              <div class="faq-content hidden mt-3 text-gray-600" data-i18n="contact.faq.q3.answer">Aceitamos todas as principais bandeiras de cartão de crédito e débito, além de pagamento via Pix e dinheiro.</div>
+            </div>
+
+            <div class="border border-gray-200 rounded-lg p-4">
+              <button class="faq-toggle w-full text-left flex justify-between items-center">
+                <span class="font-semibold text-vip-black" data-i18n="contact.faq.q4.title">É possível cancelar a reserva?</span>
+                <i class="fas fa-chevron-down text-vip-gold transition-transform"></i>
+              </button>
+              <div class="faq-content hidden mt-3 text-gray-600" data-i18n="contact.faq.q4.answer">Sim, cancelamentos podem ser feitos sem custo até 2 horas antes do horário agendado. Após esse período, cobramos 50% do valor total.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Area -->
+        <div class="animate-on-scroll" style="animation-delay: 0.1s;">
+          <h2 class="text-2xl font-poppins font-bold text-vip-black mb-6" data-i18n="contact.area.title">Área de <span class="gradient-text">Atuação</span></h2>
+
+          <div class="bg-vip-gray rounded-lg p-6 mb-6">
+            <h3 class="font-semibold text-vip-black mb-3" data-i18n="contact.area.rio.title">Rio de Janeiro - Capital</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li><i class="fas fa-check text-vip-gold mr-2"></i> Zona Sul (Copacabana, Ipanema, Leblon, Botafogo)</li>
+              <li><i class="fas fa-check text-vip-gold mr-2"></i> Zona Norte (Tijuca, Maracanã, Vila Isabel)</li>
+              <li><i class="fas fa-check text-vip-gold mr-2"></i> Zona Oeste (Barra, Recreio, Jacarepaguá)</li>
+              <li><i class="fas fa-check text-vip-gold mr-2"></i> Centro e Niterói</li>
+            </ul>
+          </div>
+
+          <div class="bg-vip-gray rounded-lg p-6">
+            <h3 class="font-semibold text-vip-black mb-3" data-i18n="contact.area.airports.title">Aeroportos</h3>
+            <ul class="text-gray-600 space-y-2">
+              <li><i class="fas fa-plane text-vip-gold mr-2"></i> Galeão - GIG (Antônio Carlos Jobim)</li>
+              <li><i class="fas fa-plane text-vip-gold mr-2"></i> Santos Dumont - SDU</li>
+              <li><i class="fas fa-plane text-vip-gold mr-2"></i> Jacarepaguá - RJX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa / Localização -->
+  <section class="section-spacing bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-poppins font-bold text-vip-black mb-6" data-i18n="contact.location.title">Localização</h2>
+      <div class="rounded-24 overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps?q=Rua+Santana,+149,+Centro,+Rio+de+Janeiro+-+RJ&output=embed"
+          width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-spacing bg-gradient-to-br from-vip-black to-black">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-section-mobile md:text-section font-poppins font-bold text-white mb-6 animate-on-scroll" data-i18n="contact.urgent.title">Precisa de <span class="gradient-text">Transporte Urgente</span>?</h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;" data-i18n="contact.urgent.subtitle">Para solicitações urgentes, recomendamos contato direto via WhatsApp. Nossa equipe está pronta para atender você imediatamente.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll" style="animation-delay: 0.4s;">
+          <button data-whatsapp="urgent-cta" data-service="Urgência - Contato Site" class="premium-button bg-green-500 hover:bg-green-600 text-lg px-8 py-4">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span data-i18n="contact.urgent.btn">WhatsApp Urgente</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Load Components -->
+  <script>
+    // Load header
+    fetch('/components/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+        I18N.apply();
+      });
+
+    // Load footer
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+        I18N.apply();
+      });
+
+    // FAQ Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqToggles = document.querySelectorAll('.faq-toggle');
+
+      faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('i');
+
+          if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            content.classList.add('hidden');
+            icon.style.transform = 'rotate(0)';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule . - [L]
+RewriteRule ^$ index.html [L]
+RewriteRule ^contato/?$ views/contato.html [L]
+RewriteRule ^servicos/?$ views/servicos.html [L]
+RewriteRule ^frota-executivos/?$ views/frota-executivos.html [L]
+RewriteRule ^frota-blindados/?$ views/frota-blindados.html [L]

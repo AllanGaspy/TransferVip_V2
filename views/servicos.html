@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços VIP - Transfer VIP Tour</title>
+  <meta name="description" content="Serviços de transporte VIP: transfer aeroporto, transporte corporativo, eventos especiais, city tour. Atendimento personalizado 24 horas no Rio de Janeiro.">
+  <meta name="keywords" content="serviços VIP, transfer aeroporto, transporte corporativo, city tour, eventos especiais">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Serviços VIP Premium - Transfer VIP Tour">
+  <meta property="og:description" content="Serviços personalizados de transporte VIP no Rio de Janeiro. Transfer aeroporto, corporativo, eventos e city tours.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://transferviptour.com.br/novo/views/servicos.html">
+  <meta property="og:image" content="https://transferviptour.com.br/novo/assets/images/servicos-vip.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/whatsapp-integration.js"></script>
+  <script type="module" src="/js/i18n.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Serviços VIP de Transporte",
+    "description": "Serviços premium de transporte executivo e turístico no Rio de Janeiro",
+    "provider": {
+      "@type": "Organization",
+      "name": "Transfer VIP Tour"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Rio de Janeiro"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços VIP"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <div id="header-container"></div>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-vip-black to-black py-16 md:py-24 border-b border-vip-gold/20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-vip-gold to-vip-gold-dark mb-6">
+          <i class="fas fa-briefcase text-white text-2xl"></i>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-poppins font-bold text-white mb-4" data-i18n="header.services.title">Nossos <span class="gradient-text">Serviços</span></h1>
+        <p class="text-lg md:text-xl text-gray-300" data-i18n="header.services.subtitle">Transfer Aeroporto, Corporativo, Eventos e City Tour com equipe bilíngue e atendimento 24h.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section-spacing bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-section-mobile md:text-section font-poppins font-bold text-vip-black mb-4 animate-on-scroll" data-i18n="services.overview.title">
+          Experiências <span class="gradient-text">Exclusivas</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;" data-i18n="services.overview.subtitle">
+          Cada serviço é cuidadosamente planejado para oferecer conforto, segurança e sofisticação.
+          Nossa equipe bilíngue está preparada para atender clientes nacionais e internacionais com o mais alto padrão de excelência.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 services-grid">
+        <!-- Airport Transfer -->
+        <div class="premium-card text-center animate-on-scroll">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-plane text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.cards.airport.title">Transfer Aeroporto</h3>
+          <p class="text-gray-600 mb-6" data-i18n="services.cards.airport.text">
+            Recepção personalizada no desembarque com placa identificada. Monitoramento em tempo real de voos,
+            assistência com bagagem e escolta VIP até o veículo. Serviço disponível 24 horas nos aeroportos SDU e GIG.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.airport.b1">Monitoramento de voos em tempo real</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.airport.b2">1 hora de tolerância para desembarque</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.airport.b3">Assistência com bagagem</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.airport.b4">Wi-Fi gratuito no veículo</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="Transfer Aeroporto"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="btn.reserve">Reservar Agora</span>
+          </button>
+        </div>
+
+        <!-- Corporate Transport -->
+        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-briefcase text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.cards.corporate.title">Transporte Corporativo</h3>
+          <p class="text-gray-600 mb-6" data-i18n="services.cards.corporate.text">
+            Serviço executivo para reuniões, visitas a clientes, eventos corporativos e transporte de executivos.
+            Total discrição e pontualidade garantida com motoristas bilíngues e uniformizados.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.corporate.b1">Discrição absoluta garantida</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.corporate.b2">Motoristas uniformizados</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.corporate.b3">Confidencialidade de dados</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.corporate.b4">Relatório de viagem disponível</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="Transporte Corporativo"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="btn.reserve">Reservar Agora</span>
+          </button>
+        </div>
+
+        <!-- Special Events -->
+        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-glass-cheers text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.cards.events.title">Eventos Especiais</h3>
+          <p class="text-gray-600 mb-6" data-i18n="services.cards.events.text">
+            Transporte VIP para casamentos, formaturas, aniversários, jantares de negócios e celebrações especiais.
+            Decoração personalizada e serviço concierge completo para tornar seu momento ainda mais especial.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.events.b1">Decoração personalizada do veículo</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.events.b2">Serviço concierge incluído</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.events.b3">Champagne e amenities</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.events.b4">Fotógrafo profissional (opcional)</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="Eventos Especiais"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="btn.reserve">Reservar Agora</span>
+          </button>
+        </div>
+
+        <!-- City Tour -->
+        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.3s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-map-marked-alt text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.cards.city.title">City Tour VIP</h3>
+          <p class="text-gray-600 mb-6" data-i18n="services.cards.city.text">
+            Passeios turísticos personalizados pelos pontos mais emblemáticos do Rio de Janeiro.
+            Motorista guia bilíngue com profundo conhecimento da cidade, rotas exclusivas e paradas estratégicas.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.city.b1">Motorista guia bilíngue certificado</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.city.b2">Rotas personalizadas</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.city.b3">Paradas fotográficas estratégicas</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.city.b4">Água e snacks premium</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="City Tour VIP"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="btn.reserve">Reservar Agora</span>
+          </button>
+        </div>
+
+        <!-- Shopping Tour -->
+        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-shopping-bag text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.cards.shopping.title">Shopping Tour</h3>
+          <p class="text-gray-600 mb-6" data-i18n="services.cards.shopping.text">
+            Experiência de compras VIP nos melhores shoppings e outlets do Rio.
+            Transporte de malas, concierge pessoal e acesso a áreas exclusivas. Perfeito para turistas exigentes.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.shopping.b1">Concierge pessoal dedicado</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.shopping.b2">Transporte de compras e malas</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.shopping.b3">Acesso VIP a lojas exclusivas</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.shopping.b4">Descontos especiais parceiros</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="Shopping Tour"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="btn.reserve">Reservar Agora</span>
+          </button>
+        </div>
+
+        <!-- Business Meetings -->
+        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.5s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-handshake text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.cards.business.title">Reuniões de Negócios</h3>
+          <p class="text-gray-600 mb-6" data-i18n="services.cards.business.text">
+            Transporte executivo para reuniões de negócios com múltiplas paradas.
+            Suporte logístico completo, itinerário otimizado e backup de veículos para garantir pontualidade absoluta.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.business.b1">Planejamento de itinerário otimizado</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.business.b2">Backup de veículos disponível</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.business.b3">Suporte logístico completo</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700" data-i18n="services.cards.business.b4">Relatório detalado da viagem</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="Reuniões de Negócios"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="btn.reserve">Reservar Agora</span>
+          </button>
+        </div>
+
+        <!-- Wedding Transport -->
+        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.6s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-ring text-white text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-poppins font-bold text-vip-black mb-4">Transporte de Casamentos</h3>
+          <p class="text-gray-600 mb-6">
+            Serviço completo para casamentos: transporte dos noivos, padrinhos e convidados VIP.
+            Decoração especial, champagne, fotógrafo profissional e coordenação com cerimonialistas.
+          </p>
+          <div class="space-y-3 mb-6 text-left">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700">Decoração especial com flores naturais</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700">Champagne Dom Pérignon</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700">Fotógrafo profissional incluído</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-vip-gold mt-1 mr-3 flex-shrink-0"></i>
+              <span class="text-sm text-gray-700">Coordenação com cerimonial</span>
+            </div>
+          </div>
+
+          <button data-whatsapp="services" data-service="Transporte de Casamentos"
+                  class="premium-button w-full justify-center">
+            <i class="fab fa-whatsapp"></i>
+            Reservar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Features -->
+  <section class="section-spacing bg-vip-gray">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-section-mobile md:text-section font-poppins font-bold text-vip-black mb-4 animate-on-scroll" data-i18n="services.features.title">Diferenciais dos <span class="gradient-text">Nossos Serviços</span></h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;" data-i18n="services.features.subtitle">Características que tornam nossos serviços únicos e garantem sua completa satisfação.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-clock text-white text-3xl"></i>
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.features.item.availability.title">Disponibilidade 24h</h3>
+          <p class="text-gray-600" data-i18n="services.features.item.availability.text">Serviço disponível todos os dias da semana, 24 horas por dia, incluindo feriados.</p>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-language text-white text-3xl"></i>
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.features.item.bilingual.title">Atendimento Bilíngue</h3>
+            <p class="text-gray-600" data-i18n="services.features.item.bilingual.text">Motoristas fluentes em português e inglês, preparados para receber clientes internacionais.</p>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.3s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-shield-alt text-white text-3xl"></i>
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.features.item.security.title">Segurança Garantida</h3>
+          <p class="text-gray-600" data-i18n="services.features.item.security.text">Veículos com rastreamento GPS, motoristas treinados e seguro completo para todos os passageiros.</p>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="w-20 h-20 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-concierge-bell text-white text-3xl"></i>
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.features.item.concierge.title">Serviço Concierge</h3>
+          <p class="text-gray-600" data-i18n="services.features.item.concierge.text">Atendimento personalizado com atenção aos mínimos detalhes e antecipação de necessidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process -->
+  <section class="section-spacing bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-section-mobile md:text-section font-poppins font-bold text-vip-black mb-4 animate-on-scroll" data-i18n="services.process.title">Como <span class="gradient-text">Funciona</span></h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;" data-i18n="services.process.subtitle">Processo simples e eficiente para garantir o melhor atendimento possível.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="w-16 h-16 bg-vip-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            1
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.process.step1.title">Contato</h3>
+          <p class="text-gray-600" data-i18n="services.process.step1.text">Entre em contato via WhatsApp ou formulário com suas necessidades e preferências.</p>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="w-16 h-16 bg-vip-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            2
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.process.step2.title">Personalização</h3>
+          <p class="text-gray-600" data-i18n="services.process.step2.text">Criamos um plano personalizado com veículo, rota e serviços específicos para você.</p>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.3s;">
+          <div class="w-16 h-16 bg-vip-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            3
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.process.step3.title">Confirmação</h3>
+          <p class="text-gray-600" data-i18n="services.process.step3.text">Confirmamos todos os detalhes, horários e enviamos a confirmação com informações do motorista.</p>
+        </div>
+
+        <div class="text-center animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="w-16 h-16 bg-vip-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            4
+          </div>
+          <h3 class="text-lg font-poppins font-semibold text-vip-black mb-3" data-i18n="services.process.step4.title">Experiência VIP</h3>
+          <p class="text-gray-600" data-i18n="services.process.step4.text">Desfrute de uma experiência de transporte premium com total conforto e segurança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-spacing bg-gradient-to-br from-vip-black to-black">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-section-mobile md:text-section font-poppins font-bold text-white mb-6 animate-on-scroll" data-i18n="cta.title">
+          Pronto para uma <span class="gradient-text">Experiência VIP</span>?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;" data-i18n="cta.subtitle">
+          Entre em contato e receba um orçamento personalizado para o serviço de sua preferência.
+          Nossa equipe está disponível 24 horas para atender suas necessidades.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll" style="animation-delay: 0.4s;">
+          <button data-whatsapp="services-cta" data-service="Orçamento Serviços VIP" class="premium-button text-lg px-8 py-4">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span data-i18n="cta.btn.whatsapp">Falar no WhatsApp</span>
+          </button>
+          <a href="/views/contato.html" class="premium-button premium-button-secondary text-lg px-8 py-4">
+            <i class="fas fa-envelope text-xl"></i>
+            <span data-i18n="cta.btn.contact">Formulário de Contato</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Load Components -->
+  <script>
+    // Load header
+    fetch('/components/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+        if (window.I18N) window.I18N.apply();
+      });
+
+    // Load footer
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+        if (window.I18N) window.I18N.apply();
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #0A0A0A;
+  background-color: #FFFFFF;
+}
+
+/* Premium Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Premium Card Styles */
+.premium-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* Card hover animation enhancements */
+.premium-card img {
+  transition: transform 0.4s ease;
+}
+
+.premium-card:hover img {
+  transform: scale(1.06);
+}
+
+
+
+/* Vehicle category badges disabled */
+[data-badge] {
+  display: none !important;
+}
+
+.premium-card > .p-6 {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-card .premium-button,
+.service-card .premium-button,
+.service-card .btn-primary {
+  margin-top: auto;
+}
+
+.service-card .service-icon {
+  margin-top: 20px;
+}
+
+.services-grid {
+  margin-top: 24px;
+}
+
+/* Extra top padding for centered cards (services) */
+.premium-card.text-center {
+  padding-top: 32px;
+}
+
+/* Service card feature list left padding for better spacing */
+.premium-card .space-y-3.text-left {
+  padding-left: 16px;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    margin-top: 32px;
+  }
+}
+
+/* Premium Button Styles */
+.premium-button {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.premium-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.premium-button-secondary {
+  background: transparent;
+  color: #D4AF37;
+  border: 2px solid #D4AF37;
+}
+
+.premium-button-secondary:hover {
+  background: #D4AF37;
+  color: white;
+}
+
+/* Social icon round shape fix */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+}
+
+/* Navigation Styles */
+.premium-nav {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  background: #0A0A0A;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Form Styles */
+.premium-input {
+  background: #FFFFFF;
+  border: 2px solid #E5E5E5;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.premium-input:focus {
+  outline: none;
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.premium-input.error {
+  border-color: #EF4444;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  background: #25D366;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Section Spacing */
+.section-spacing {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 40px 0;
+  }
+}
+
+/* Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure hover overrides scroll animation transform */
+.premium-card.animate-on-scroll.animated:hover,
+.service-card.premium-card.animate-on-scroll.animated:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* Loading States */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus States */
+.focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
