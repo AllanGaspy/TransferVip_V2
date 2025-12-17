@@ -1,5 +1,4 @@
 // Main JavaScript for Transfer VIP Premium Redesign
-import '../css/main.css';
 
 // Mobile Menu Controller
 class MobileMenu {
@@ -56,11 +55,17 @@ class ScrollAnimations {
   }
 
   init() {
+    const isInViewport = (el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < (window.innerHeight || document.documentElement.clientHeight) && r.bottom > 0;
+    };
+
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animated');
+            observer.unobserve(entry.target);
           }
         });
       }, {
@@ -68,9 +73,14 @@ class ScrollAnimations {
         rootMargin: '0px 0px -50px 0px'
       });
 
-      this.elements.forEach(el => observer.observe(el));
+      this.elements.forEach(el => {
+        if (isInViewport(el)) {
+          el.classList.add('animated');
+        } else {
+          observer.observe(el);
+        }
+      });
     } else {
-      // Fallback for older browsers
       this.elements.forEach(el => el.classList.add('animated'));
     }
   }
@@ -126,14 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Add loading class to images
-  const images = document.querySelectorAll('img');
-  images.forEach(img => {
-    img.classList.add('loading');
-    img.addEventListener('load', () => {
-      img.classList.remove('loading');
-    });
-  });
+  // Remove initial image shimmer to avoid flicker
 
   // Replace incorrect WhatsApp SVG icons with Font Awesome
   const replaceIcon = (el, sizeClass = 'text-lg') => {
@@ -145,6 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('button[data-whatsapp] svg').forEach(svg => replaceIcon(svg, 'text-xl'));
 
   console.log('🚀 Transfer VIP Premium Redesign initialized!');
+});
+
+// Enable animations only after full page load to avoid initial flicker
+window.addEventListener('load', () => {
+  document.documentElement.classList.add('animations-enabled');
 });
 
 // Export for use in other modules

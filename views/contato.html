@@ -25,6 +25,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Main Styles (preload to avoid FOUC) -->
+  <link rel="stylesheet" href="/css/main.css">
+
   <!-- Styles -->
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/whatsapp-integration.js"></script>
@@ -483,7 +486,7 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('header-container').innerHTML = html;
-        I18N.apply();
+        if (window.I18N) window.I18N.apply();
       });
 
     // Load footer
@@ -491,7 +494,7 @@
       .then(response => response.text())
       .then(html => {
         document.getElementById('footer-container').innerHTML = html;
-        I18N.apply();
+        if (window.I18N) window.I18N.apply();
       });
 
     // FAQ Toggle
