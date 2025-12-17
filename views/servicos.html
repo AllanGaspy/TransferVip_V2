@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://transferviptour.com.br/novo/assets/images/servicos-vip.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,7 @@
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/whatsapp-integration.js"></script>
   <script type="module" src="/js/i18n.js"></script>
+  <script type="module" src="/js/render-services.js"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -68,6 +69,12 @@
         </div>
         <h1 class="text-3xl md:text-5xl font-poppins font-bold text-white mb-4" data-i18n="header.services.title">Nossos <span class="gradient-text">Serviços</span></h1>
         <p class="text-lg md:text-xl text-gray-300" data-i18n="header.services.subtitle">Transfer Aeroporto, Corporativo, Eventos e City Tour com equipe bilíngue e atendimento 24h.</p>
+      </div>
+
+      <!-- Dynamic Services from Admin -->
+      <div class="mt-12">
+        <h3 class="text-xl font-poppins font-bold text-vip-black mb-6">Serviços cadastrados</h3>
+        <div id="admin-services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
       </div>
     </div>
   </section>

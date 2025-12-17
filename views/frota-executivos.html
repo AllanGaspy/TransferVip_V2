@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://transferviptour.com.br/novo/assets/images/frota-executiva.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,7 @@
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/whatsapp-integration.js"></script>
   <script type="module" src="/js/i18n.js"></script>
+  <script type="module" src="/js/render-veiculos-executivos.js"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -72,125 +73,9 @@
   <!-- Fleet Grid -->
   <section class="section-spacing bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="admin-executivos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
-        <!-- Mercedes S-Class -->
-        <div class="premium-card animate-on-scroll">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Mercedes%20S-Class%20W223%20luxury%20sedan%20black%20exterior%20professional%20photography%20elegant%20lighting%20premium%20car%20showroom&image_size=landscape_16_9"
-                 alt="Mercedes S-Class W223"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="exec.cards.mercedes.title">Mercedes S-Class W223</h3>
-            <p class="text-gray-600 mb-4" data-i18n="exec.cards.mercedes.text">Sedan de luxo com interior em couro e tecnologia de ponta.</p>
-            <button data-whatsapp="fleet-detail" data-vehicle="Mercedes S-Class W223" data-service="Orçamento Executivo" class="premium-button w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- BMW 7 Series -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.1s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=BMW%207%20Series%20G70%20luxury%20sedan%20black%20exterior%20professional%20photography%20elegant%20lighting%20premium%20car%20showroom&image_size=landscape_16_9"
-                 alt="BMW 7 Series G70"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="exec.cards.bmw.title">BMW 7 Series G70</h3>
-            <p class="text-gray-600 mb-4" data-i18n="exec.cards.bmw.text">Sedan com desempenho excepcional e acabamento premium.</p>
-            <button data-whatsapp="fleet-detail" data-vehicle="BMW 7 Series G70" data-service="Orçamento Executivo"
-                    class="premium-button w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Audi A8 -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.2s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Audi%20A8%20D5%20luxury%20sedan%20black%20exterior%20professional%20photography%20elegant%20lighting%20premium%20car%20showroom&image_size=landscape_16_9"
-                 alt="Audi A8 D5"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="exec.cards.audi.title">Audi A8 D5</h3>
-            <p class="text-gray-600 mb-4" data-i18n="exec.cards.audi.text">Sedan tecnológico com sistema de tração integral quattro e interior minimalista de alto padrão.</p>
-
-            <button data-whatsapp="fleet-detail" data-vehicle="Audi A8 D5" data-service="Orçamento Executivo"
-                    class="premium-button w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Lexus ES -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.3s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Lexus%20ES%20300h%20luxury%20sedan%20black%20exterior%20professional%20photography%20elegant%20lighting%20premium%20car%20showroom&image_size=landscape_16_9"
-                 alt="Lexus ES 300h"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="exec.cards.lexus.title">Lexus ES 300h</h3>
-            <p class="text-gray-600 mb-4" data-i18n="exec.cards.lexus.text">Sedan híbrido com tecnologia Toyota, oferecendo conforto premium e eficiência excepcional.</p>
-
-            <button data-whatsapp="fleet-detail" data-vehicle="Lexus ES 300h" data-service="Orçamento Executivo"
-                    class="premium-button w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Genesis G80 -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.4s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Genesis%20G80%20luxury%20sedan%20black%20exterior%20professional%20photography%20elegant%20lighting%20premium%20car%20showroom&image_size=landscape_16_9"
-                 alt="Genesis G80"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="exec.cards.genesis.title">Genesis G80</h3>
-            <p class="text-gray-600 mb-4" data-i18n="exec.cards.genesis.text">Luxo coreano reinventado com design sofisticado e tecnologia avançada, oferecendo excelente custo-benefício.</p>
-
-            <button data-whatsapp="fleet-detail" data-vehicle="Genesis G80" data-service="Orçamento Executivo"
-                    class="premium-button w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Volvo S90 -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.5s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Volvo%20S90%20luxury%20sedan%20black%20exterior%20professional%20photography%20elegant%20lighting%20premium%20car%20showroom&image_size=landscape_16_9"
-                 alt="Volvo S90"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="exec.cards.volvo.title">Volvo S90</h3>
-            <p class="text-gray-600 mb-4" data-i18n="exec.cards.volvo.text">Sedan sueco com design minimalista e máxima segurança, perfeito para quem valoriza discrição.</p>
-
-            <button data-whatsapp="fleet-detail" data-vehicle="Volvo S90" data-service="Orçamento Executivo"
-                    class="premium-button w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </section>
 

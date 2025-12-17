@@ -2,7 +2,7 @@
 class WhatsAppIntegration {
   constructor() {
     this.phoneNumber = '+5521982428730';
-    this.defaultMessage = 'Olá, gostaria de um orçamento para transfer executivo.';
+    this.defaultMessage = 'Olá, gostaria de um orçamento para transfer.';
     this.init();
   }
 
@@ -12,15 +12,14 @@ class WhatsAppIntegration {
   }
 
   bindEvents() {
-    // Bind click events to all WhatsApp buttons
-    const whatsappButtons = document.querySelectorAll('[data-whatsapp]');
-    whatsappButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const service = button.dataset.service || '';
-        const vehicle = button.dataset.vehicle || '';
-        this.openWhatsApp(service, vehicle);
-      });
+    // Event delegation to support dynamically inserted buttons
+    document.addEventListener('click', (e) => {
+      const button = e.target.closest('[data-whatsapp]');
+      if (!button) return;
+      e.preventDefault();
+      const service = button.dataset.service || '';
+      const vehicle = button.dataset.vehicle || '';
+      this.openWhatsApp(service, vehicle);
     });
   }
 
@@ -30,19 +29,28 @@ class WhatsAppIntegration {
   }
 
   generateMessage(service, vehicle) {
-    let message = this.defaultMessage;
-
-    if (service) {
-      message += `\n\nServiço: ${service}`;
+    let resolvedService = service;
+    if (!resolvedService) {
+      const path = (location.pathname || '').toLowerCase();
+      if (path.includes('frota-blindados')) resolvedService = 'Orçamento Blindados';
+      else if (path.includes('frota-executivos')) resolvedService = 'Orçamento Executivo';
+      else resolvedService = 'Orçamento';
     }
 
-    if (vehicle) {
-      message += `\nVeículo: ${vehicle}`;
-    }
+    const ensurePeriod = (text) => {
+      const t = String(text || '').trim();
+      if (!t) return '';
+      return /[\.\!\?]$/.test(t) ? t : `${t}.`;
+    };
 
-    message += `\n\nAguardo mais informações e valores.`;
+    const lines = [
+      ensurePeriod(this.defaultMessage),
+      `Serviço: ${ensurePeriod(resolvedService)}`,
+      vehicle ? `Veículo: ${ensurePeriod(vehicle)}` : null,
+      `Aguardo mais informações e valores.`,
+    ].filter(Boolean);
 
-    return message;
+    return lines.join('\n');
   }
 
   openWhatsApp(service = '', vehicle = '') {

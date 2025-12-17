@@ -15,7 +15,7 @@
   <meta property="og:image" content="https://transferviptour.com.br/novo/assets/images/frota-blindada.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,7 @@
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/whatsapp-integration.js"></script>
   <script type="module" src="/js/i18n.js"></script>
+  <script type="module" src="/js/render-veiculos-blindados.js"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -106,122 +107,9 @@
   <!-- Fleet Grid -->
   <section class="section-spacing bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="admin-blindados" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
-        <!-- Toyota Fortuner Blindada -->
-        <div class="premium-card animate-on-scroll">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Armored%20Toyota%20Fortuner%20SUV%20black%20exterior%20professional%20photography%20security%20vehicle%20bulletproof%20premium%20lighting&image_size=landscape_16_9"
-                 alt="Toyota Fortuner Blindada"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-badge data-i18n="armored.badge.level3a">BLINDADA IIIA</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="armored.cards.toyota.title">Toyota Fortuner Blindada</h3>
-            <p class="text-gray-600 mb-4" data-i18n="armored.cards.toyota.text">SUV blindada com máxima segurança e conforto.</p>
-            <button data-whatsapp="armored-fleet" data-vehicle="Toyota Fortuner Blindada" data-service="Orçamento Blindado"
-                    class="premium-button bg-red-600 hover:bg-red-700 w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Ford Ranger Blindada -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.1s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Armored%20Ford%20Ranger%20pickup%20black%20exterior%20professional%20photography%20security%20vehicle%20bulletproof%20premium%20lighting&image_size=landscape_16_9"
-                 alt="Ford Ranger Blindada"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-badge data-i18n="armored.badge.level3a">BLINDADA IIIA</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="armored.cards.ford.title">Ford Ranger Blindada</h3>
-            <p class="text-gray-600 mb-4" data-i18n="armored.cards.ford.text">Pickup blindada com proteção total e robustez.</p>
-            <button data-whatsapp="armored-fleet" data-vehicle="Ford Ranger Blindada" data-service="Orçamento Blindado"
-                    class="premium-button bg-red-600 hover:bg-red-700 w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Chevrolet S10 Blindada -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.2s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Armored%20Chevrolet%20S10%20pickup%20black%20exterior%20professional%20photography%20security%20vehicle%20bulletproof%20premium%20lighting&image_size=landscape_16_9"
-                 alt="Chevrolet S10 Blindada"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-badge data-i18n="armored.badge.level3a">BLINDADA IIIA</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="armored.cards.chevrolet.title">Chevrolet S10 Blindada</h3>
-            <p class="text-gray-600 mb-4" data-i18n="armored.cards.chevrolet.text">Pickup blindada com proteção confiável e excelente custo-benefício.</p>
-            <button data-whatsapp="armored-fleet" data-vehicle="Chevrolet S10 Blindada" data-service="Orçamento Blindado"
-                    class="premium-button bg-red-600 hover:bg-red-700 w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Mitsubishi Pajero Blindada -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.3s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Armored%20Mitsubishi%20Pajero%20SUV%20black%20exterior%20professional%20photography%20security%20vehicle%20bulletproof%20premium%20lighting&image_size=landscape_16_9"
-                 alt="Mitsubishi Pajero Blindada"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-badge data-i18n="armored.badge.level3a">BLINDADA IIIA</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="armored.cards.pajero.title">Mitsubishi Pajero Blindada</h3>
-            <p class="text-gray-600 mb-4" data-i18n="armored.cards.pajero.text">SUV blindada com capacidade off-road e proteção balística.</p>
-            <button data-whatsapp="armored-fleet" data-vehicle="Mitsubishi Pajero Blindada" data-service="Orçamento Blindado"
-                    class="premium-button bg-red-600 hover:bg-red-700 w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Jeep Gladiator Blindada -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.4s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Armored%20Jeep%20Gladiator%20pickup%20black%20exterior%20professional%20photography%20security%20vehicle%20bulletproof%20premium%20lighting&image_size=landscape_16_9"
-                 alt="Jeep Gladiator Blindada"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-badge data-i18n="armored.badge.level3a">BLINDADA IIIA</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="armored.cards.jeep.title">Jeep Gladiator Blindada</h3>
-            <p class="text-gray-600 mb-4" data-i18n="armored.cards.jeep.text">Pickup blindada robusta com DNA Jeep e proteção excepcional.</p>
-            <button data-whatsapp="armored-fleet" data-vehicle="Jeep Gladiator Blindada" data-service="Orçamento Blindado"
-                    class="premium-button bg-red-600 hover:bg-red-700 w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Land Rover Defender Blindada -->
-        <div class="premium-card animate-on-scroll" style="animation-delay: 0.5s;">
-          <div class="relative overflow-hidden rounded-t-16">
-            <img src="https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=Armored%20Land%20Rover%20Defender%20SUV%20black%20exterior%20professional%20photography%20security%20vehicle%20bulletproof%20premium%20lighting&image_size=landscape_16_9"
-                 alt="Land Rover Defender Blindada"
-                 class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
-            <div class="absolute top-4 right-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-badge data-i18n="armored.badge.level3a">BLINDADA IIIA</div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-2xl font-poppins font-bold text-vip-black mb-2" data-i18n="armored.cards.defender.title">Land Rover Defender Blindada</h3>
-            <p class="text-gray-600 mb-4" data-i18n="armored.cards.defender.text">SUV blindada britânica com design icônico e proteção premium.</p>
-            <button data-whatsapp="armored-fleet" data-vehicle="Land Rover Defender Blindada" data-service="Orçamento Blindado"
-                    class="premium-button bg-red-600 hover:bg-red-700 w-full justify-center">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="btn.quote">Solicitar Orçamento</span>
-            </button>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </section>
 

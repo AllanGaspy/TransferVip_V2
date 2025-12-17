@@ -11,6 +11,7 @@ const I18N = (() => {
       dict = {};
     }
     apply();
+    try { window.dispatchEvent(new CustomEvent('i18n:change', { detail: { lang } })); } catch {}
   };
   const t = (key) => dict[key] || key;
   const apply = () => {
