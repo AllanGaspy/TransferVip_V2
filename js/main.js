@@ -183,19 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize header scroll effect
   new HeaderScroll();
 
-  // Smooth scroll for anchor links
+  // Smooth scroll for anchor links (skip bare '#')
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href') || ''
+      if (href === '#' || href.trim() === '#') return
+      e.preventDefault()
+      const target = document.querySelector(href)
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
-    });
-  });
+    })
+  })
 
   // Remove initial image shimmer to avoid flicker
 

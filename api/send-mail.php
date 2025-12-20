@@ -53,17 +53,47 @@ $toEmail = $config['to_email'] ?? 'transferviptourcontact@gmail.com';
 $fromEmail = $config['from_email'] ?? 'no-reply@seu-dominio.com';
 $fromName = $config['from_name'] ?? 'Transfer VIP Tour';
 
-$html = '<h2 style="margin:0 0 12px; font-family:Poppins, Arial;">Novo contato</h2>' .
-  '<p style="margin:0 0 8px;">Nome: <strong>' . htmlspecialchars($nome) . '</strong></p>' .
-  '<p style="margin:0 0 8px;">Email: <strong>' . htmlspecialchars($email) . '</strong></p>' .
-  '<p style="margin:0 0 8px;">Telefone: <strong>' . htmlspecialchars($telefone) . '</strong></p>' .
-  '<p style="margin:0 0 8px;">Serviço: <strong>' . htmlspecialchars($servico) . '</strong></p>' .
-  ($veiculo ? '<p style="margin:0 0 8px;">Veículo: <strong>' . htmlspecialchars($veiculo) . '</strong></p>' : '') .
-  ($data ? '<p style="margin:0 0 8px;">Data: <strong>' . htmlspecialchars($data) . '</strong></p>' : '') .
-  ($hora ? '<p style="margin:0 0 8px;">Hora: <strong>' . htmlspecialchars($hora) . '</strong></p>' : '') .
-  ($passageiros ? '<p style="margin:0 0 8px;">Passageiros: <strong>' . htmlspecialchars($passageiros) . '</strong></p>' : '') .
-  '<p style="margin:12px 0 0;">Mensagem:</p>' .
-  '<div style="padding:12px; background:#f7f7f7; border-radius:8px;">' . nl2br(htmlspecialchars($mensagem)) . '</div>';
+$rows = '';
+$rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Nome</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($nome) . '</td></tr>';
+$rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Email</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($email) . '</td></tr>';
+$rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Telefone</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($telefone) . '</td></tr>';
+$rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Serviço</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($servico) . '</td></tr>';
+if ($veiculo) $rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Veículo</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($veiculo) . '</td></tr>';
+if ($data) $rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Data</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($data) . '</td></tr>';
+if ($hora) $rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Hora</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($hora) . '</td></tr>';
+if ($passageiros) $rows .= '<tr><td style="padding:8px 12px;color:#6b7280;width:30%">Passageiros</td><td style="padding:8px 12px;color:#111827;font-weight:600">' . htmlspecialchars($passageiros) . '</td></tr>';
+$html = '
+  <div style="background:#f3f4f6;padding:24px;font-family:Inter,Arial,sans-serif;">
+    <div style="max-width:640px;margin:0 auto;background:#ffffff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;">
+      <div style="background:#111827;color:#ffffff;padding:16px 24px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-weight:700;font-size:16px;letter-spacing:.3px;">Transfer VIP Tour</div>
+          <div style="font-size:12px;color:#f59e0b;">Novo contato</div>
+        </div>
+      </div>
+      <div style="padding:20px 24px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+          ' . $rows . '
+        </table>
+        <div style="margin-top:16px;color:#374151;font-size:14px;">Mensagem</div>
+        <div style="margin-top:8px;padding:12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;color:#111827;line-height:1.5;">
+          ' . nl2br(htmlspecialchars($mensagem)) . '
+        </div>
+      </div>
+      <div style="padding:12px 24px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:12px;">Este e-mail foi gerado pelo site Transfer VIP Tour</div>
+    </div>
+  </div>
+';
+$text = "NOVO CONTATO\n\n" .
+  "Nome: " . $nome . "\n" .
+  "Email: " . $email . "\n" .
+  "Telefone: " . $telefone . "\n" .
+  "Serviço: " . $servico . "\n" .
+  ($veiculo ? ("Veículo: " . $veiculo . "\n") : '') .
+  ($data ? ("Data: " . $data . "\n") : '') .
+  ($hora ? ("Hora: " . $hora . "\n") : '') .
+  ($passageiros ? ("Passageiros: " . $passageiros . "\n") : '') .
+  "\nMensagem:\n" . $mensagem;
 
 // Send via provider
 $provider = strtolower($config['provider'] ?? '');
@@ -77,6 +107,7 @@ try {
       'to' => [$toEmail],
       'subject' => $subject,
       'html' => $html,
+      'text' => $text,
       'reply_to' => $email,
     ];
     $ch = curl_init('https://api.resend.com/emails');
@@ -107,7 +138,10 @@ try {
       ]],
       'from' => ['email' => $fromEmail, 'name' => $fromName],
       'reply_to' => ['email' => $email],
-      'content' => [[ 'type' => 'text/html', 'value' => $html ]],
+      'content' => [
+        [ 'type' => 'text/plain', 'value' => $text ],
+        [ 'type' => 'text/html', 'value' => $html ],
+      ],
     ];
     $ch = curl_init('https://api.sendgrid.com/v3/mail/send');
     curl_setopt_array($ch, [

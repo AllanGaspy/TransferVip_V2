@@ -32,6 +32,8 @@
   <script type="module" src="/js/main.js"></script>
   <script type="module" src="/js/whatsapp-integration.js"></script>
   <script type="module" src="/js/i18n.js"></script>
+  <script type="module" src="/js/render-home-fleet.js"></script>
+  <script type="module" src="/js/render-home-services.js"></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -175,7 +177,7 @@
   </section>
 
   <!-- Services Section -->
-  <section class="section-spacing bg-white">
+  <section id="home-services" class="section-spacing bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-section-mobile md:text-section font-poppins font-bold text-vip-black mb-4 animate-on-scroll" data-i18n="home.services.title">
@@ -186,51 +188,14 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.1s;">
-          <div class="w-16 h-16 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-plane text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.transfer.title">Transfer Aeroporto</h3>
-          <p class="text-gray-600 mb-6" data-i18n="services.transfer.text">Recepção no desembarque com placa personalizada. Monitoramento de voos em tempo real.</p>
-
-          <button data-whatsapp="services" data-service="Transfer Aeroporto"
-                  class="premium-button w-full justify-center">
-            <i class="fab fa-whatsapp"></i>
-            <span data-i18n="btn.reserve">Reservar Agora</span>
-          </button>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.2s;">
-          <div class="w-16 h-16 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-briefcase text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.corporate.title">Transporte Corporativo</h3>
-          <p class="text-gray-600 mb-6" data-i18n="services.corporate.text">Serviço executivo para reuniões, eventos e visitas corporativas com total discrição.</p>
-
-          <button data-whatsapp="services" data-service="Transporte Corporativo"
-                  class="premium-button w-full justify-center">
-            <i class="fab fa-whatsapp"></i>
-            <span data-i18n="btn.reserve">Reservar Agora</span>
-          </button>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="premium-card text-center animate-on-scroll" style="animation-delay: 0.3s;">
-          <div class="w-16 h-16 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-ring text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-poppins font-bold text-vip-black mb-4" data-i18n="services.events.title">Eventos Especiais</h3>
-          <p class="text-gray-600 mb-6" data-i18n="services.events.text">Casamentos, formaturas e celebrações com serviço VIP personalizado.</p>
-
-          <button data-whatsapp="services" data-service="Eventos Especiais"
-                  class="premium-button w-full justify-center">
-            <i class="fab fa-whatsapp"></i>
-            <span data-i18n="btn.reserve">Reservar Agora</span>
-          </button>
-        </div>
+      <div id="home-services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+      </div>
+      <div class="text-center mt-12">
+        <a href="/servicos" class="premium-button premium-button-secondary">
+          <span data-i18n="home.services.view_all">Ver Serviços</span>
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
       </div>
     </div>
   </section>

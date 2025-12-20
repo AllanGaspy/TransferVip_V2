@@ -270,5 +270,6 @@
   "services.process.step3.title": "Confirmação",
   "services.process.step3.text": "Confirmamos todos os detalhes, horários e enviamos a confirmação com informações do motorista.",
   "services.process.step4.title": "Experiência VIP",
-  "services.process.step4.text": "Desfrute de uma experiência de transporte premium com total conforto e segurança."
+  "services.process.step4.text": "Desfrute de uma experiência de transporte premium com total conforto e segurança.",
+  "home.services.view_all": "Ver Serviços"
 }

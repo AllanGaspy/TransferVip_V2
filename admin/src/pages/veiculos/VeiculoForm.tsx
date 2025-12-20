@@ -52,7 +52,7 @@ const VeiculoForm: React.FC = () => {
           ano: (data.ano ?? '').toString(),
           placa: data.placa || '',
           tipo: data.tipo,
-          capacidade_passageiros: data.capacidade_passageiros.toString(),
+          capacidade_passageiros: (data.capacidade_passageiros ?? '').toString(),
           foto_url: data.foto_url || '',
           ativo: data.ativo,
           blindado: !!data.blindado,

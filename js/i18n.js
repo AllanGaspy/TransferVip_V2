@@ -18,7 +18,16 @@ const I18N = (() => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const val = t(key);
-      if (val) el.innerHTML = val;
+      if (!val) return;
+      const tag = (el.tagName || '').toUpperCase();
+      if (tag === 'INPUT' || tag === 'TEXTAREA') {
+        if (key.includes('placeholder')) {
+          el.setAttribute('placeholder', val);
+        }
+        // Do not set innerHTML or value for inputs/textareas via i18n
+      } else {
+        el.innerHTML = val;
+      }
     });
   };
   const bindSwitcher = () => {

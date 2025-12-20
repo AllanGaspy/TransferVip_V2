@@ -7,6 +7,7 @@ Desktop.ini
 .vscode/
 .idea/
 .trae/
+config/mail.local.php
 
 # Logs
 *.log

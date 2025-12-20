@@ -11,7 +11,7 @@ async function renderBlindados() {
       .select('*')
       .eq('ativo', true)
       .eq('blindado', true)
-      .order('modelo', { ascending: true })
+      .order('created_at', { ascending: false })
 
     if (error) throw error
 
@@ -20,7 +20,17 @@ async function renderBlindados() {
       return
     }
 
-    const cards = data.map((v) => {
+    const orderMap = { sedan: 0, suv: 1, minivan: 2, van: 3, luxo: 4 }
+    const sorted = data.slice().sort((a, b) => {
+      const oa = orderMap[(a.tipo || '').toLowerCase()] ?? 99
+      const ob = orderMap[(b.tipo || '').toLowerCase()] ?? 99
+      if (oa !== ob) return oa - ob
+      const ca = new Date(a.created_at || 0).getTime()
+      const cb = new Date(b.created_at || 0).getTime()
+      return cb - ca
+    })
+
+    const cards = sorted.map((v) => {
       const lang = (localStorage.getItem('lang') || 'pt').toLowerCase()
       const desc = lang.startsWith('en') ? (v.descricao_en || v.descricao_pt || '')
         : lang.startsWith('es') ? (v.descricao_es || v.descricao_pt || '')

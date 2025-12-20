@@ -9,7 +9,7 @@ const VeiculosList: React.FC = () => {
   const [veiculos, setVeiculos] = useState<Veiculo[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
-  const [filterStatus, setFilterStatus] = useState<'all' | 'available' | 'unavailable'>('all')
+  const [filterStatus, setFilterStatus] = useState<'all' | 'available' | 'unavailable' | 'executivo' | 'blindado'>('all')
 
   useEffect(() => {
     loadVeiculos()
@@ -60,9 +60,21 @@ const VeiculosList: React.FC = () => {
 
     const matchesStatus = filterStatus === 'all' ||
       (filterStatus === 'available' && veiculo.ativo) ||
-      (filterStatus === 'unavailable' && !veiculo.ativo)
+      (filterStatus === 'unavailable' && !veiculo.ativo) ||
+      (filterStatus === 'executivo' && veiculo.executivo) ||
+      (filterStatus === 'blindado' && veiculo.blindado)
 
     return matchesSearch && matchesStatus
+  })
+
+  const orderMap: Record<string, number> = { sedan: 0, suv: 1, minivan: 2, van: 3, luxo: 4 }
+  const sortedVeiculos = filteredVeiculos.slice().sort((a, b) => {
+    const oa = orderMap[(a.tipo || '').toLowerCase()] ?? 99
+    const ob = orderMap[(b.tipo || '').toLowerCase()] ?? 99
+    if (oa !== ob) return oa - ob
+    const ca = new Date(a.created_at || 0).getTime()
+    const cb = new Date(b.created_at || 0).getTime()
+    return cb - ca
   })
 
   if (loading) {
@@ -107,18 +119,20 @@ const VeiculosList: React.FC = () => {
           <select
             className="px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             value={filterStatus}
-            onChange={(e) => setFilterStatus(e.target.value as 'all' | 'available' | 'unavailable')}
+            onChange={(e) => setFilterStatus(e.target.value as 'all' | 'available' | 'unavailable' | 'executivo' | 'blindado')}
           >
             <option value="all">Todos</option>
             <option value="available">Disponíveis</option>
             <option value="unavailable">Indisponíveis</option>
+            <option value="executivo">Executivos</option>
+            <option value="blindado">Blindados</option>
           </select>
         </div>
       </div>
 
       {/* Grid de Veículos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredVeiculos.map((veiculo) => (
+        {sortedVeiculos.map((veiculo) => (
           <div key={veiculo.id} className="bg-white shadow-sm rounded-lg overflow-hidden hover:shadow-md transition-shadow">
             {veiculo.foto_url && (
               <div className="h-48 bg-gray-200">
@@ -141,13 +155,21 @@ const VeiculosList: React.FC = () => {
                   </h3>
                   <p className="text-sm text-gray-600">{veiculo.ano}</p>
                 </div>
-                <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                  veiculo.ativo
-                    ? 'bg-green-100 text-green-800'
-                    : 'bg-red-100 text-red-800'
-                }`}>
-                  {veiculo.ativo ? 'Ativo' : 'Indisponível'}
-                </span>
+                <div className="flex items-center gap-2">
+                  {veiculo.executivo && (
+                    <span className="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Executivo</span>
+                  )}
+                  {veiculo.blindado && (
+                    <span className="px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">Blindado</span>
+                  )}
+                  <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                    veiculo.ativo
+                      ? 'bg-green-100 text-green-800'
+                      : 'bg-red-100 text-red-800'
+                  }`}>
+                    {veiculo.ativo ? 'Ativo' : 'Indisponível'}
+                  </span>
+                </div>
               </div>
 
               <div className="space-y-2 mb-4">
