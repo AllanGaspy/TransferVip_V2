@@ -25,6 +25,7 @@ build/
 .cache/
 .tmp/
 coverage/
+hospedagem/
 
 # Node (if used later)
 node_modules/
