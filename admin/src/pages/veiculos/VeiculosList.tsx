@@ -21,7 +21,8 @@ const VeiculosList: React.FC = () => {
       const { data, error } = await supabase
         .from('veiculos')
         .select('*')
-        .order('modelo', { ascending: true })
+        .order('ordem', { ascending: true })
+        .order('created_at', { ascending: false })
 
       if (error) throw error
       if (data) setVeiculos(data as Veiculo[])
@@ -67,10 +68,9 @@ const VeiculosList: React.FC = () => {
     return matchesSearch && matchesStatus
   })
 
-  const orderMap: Record<string, number> = { sedan: 0, suv: 1, minivan: 2, van: 3, luxo: 4 }
   const sortedVeiculos = filteredVeiculos.slice().sort((a, b) => {
-    const oa = orderMap[(a.tipo || '').toLowerCase()] ?? 99
-    const ob = orderMap[(b.tipo || '').toLowerCase()] ?? 99
+    const oa = (a.ordem ?? 999)
+    const ob = (b.ordem ?? 999)
     if (oa !== ob) return oa - ob
     const ca = new Date(a.created_at || 0).getTime()
     const cb = new Date(b.created_at || 0).getTime()
@@ -184,6 +184,27 @@ const VeiculosList: React.FC = () => {
                 <div className="flex items-center text-sm text-gray-600">
                   <Calendar className="h-4 w-4 mr-2 text-gray-400" />
                   <span>{veiculo.tipo.toUpperCase()}</span>
+                </div>
+                <div className="flex items-center text-sm text-gray-600">
+                  <span className="font-medium mr-2">Ordem:</span>
+                  <input
+                    type="number"
+                    defaultValue={veiculo.ordem ?? 0}
+                    min={0}
+                    className="w-20 px-2 py-1 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    onBlur={async (e) => {
+                      const val = parseInt(e.currentTarget.value || '0')
+                      try {
+                        const { error } = await supabase.from('veiculos').update({ ordem: val }).eq('id', veiculo.id)
+                        if (error) throw error
+                        toast.success('Ordem atualizada')
+                        loadVeiculos()
+                      } catch (err) {
+                        console.error(err)
+                        toast.error('Falha ao atualizar ordem')
+                      }
+                    }}
+                  />
                 </div>
               </div>
 

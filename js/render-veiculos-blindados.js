@@ -11,6 +11,7 @@ async function renderBlindados() {
       .select('*')
       .eq('ativo', true)
       .eq('blindado', true)
+      .order('ordem', { ascending: true })
       .order('created_at', { ascending: false })
 
     if (error) throw error
@@ -22,6 +23,9 @@ async function renderBlindados() {
 
     const orderMap = { sedan: 0, suv: 1, minivan: 2, van: 3, luxo: 4 }
     const sorted = data.slice().sort((a, b) => {
+      const sa = (a.ordem ?? 999)
+      const sb = (b.ordem ?? 999)
+      if (sa !== sb) return sa - sb
       const oa = orderMap[(a.tipo || '').toLowerCase()] ?? 99
       const ob = orderMap[(b.tipo || '').toLowerCase()] ?? 99
       if (oa !== ob) return oa - ob

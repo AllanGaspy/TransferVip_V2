@@ -39,6 +39,7 @@ export interface Veiculo {
   ativo: boolean
   blindado: boolean
   executivo: boolean
+  ordem?: number
   foto_url: string | null
   descricao_pt?: string | null
   descricao_en?: string | null
