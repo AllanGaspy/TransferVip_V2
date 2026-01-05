@@ -15,6 +15,7 @@ async function renderHomeServices() {
 
     if (error) throw error
     if (!data || data.length === 0) return
+    try { localStorage.setItem('home_services_cache', JSON.stringify(data)) } catch {}
 
     const lang = (localStorage.getItem('lang') || 'pt').toLowerCase()
 
@@ -67,7 +68,63 @@ async function renderHomeServices() {
     try { new ScrollAnimations() } catch {}
     if (window.I18N) window.I18N.apply()
   } catch (e) {
-    console.error('Erro ao renderizar serviços da home:', e)
+    console.warn('Erro ao renderizar serviços da home:', e)
+    const grid = document.getElementById('home-services-grid')
+    if (grid) {
+      const cacheRaw = localStorage.getItem('home_services_cache')
+      if (cacheRaw) {
+        try {
+          const data = JSON.parse(cacheRaw)
+          const lang = (localStorage.getItem('lang') || 'pt').toLowerCase()
+          const cards = data.map(s => {
+            const title = lang.startsWith('en') ? (s.nome_en || s.nome_pt || s.nome)
+              : lang.startsWith('es') ? (s.nome_es || s.nome_pt || s.nome)
+              : (s.nome_pt || s.nome)
+            const desc = lang.startsWith('en') ? (s.descricao_en || s.descricao_pt || s.descricao || '')
+              : lang.startsWith('es') ? (s.descricao_es || s.descricao_pt || s.descricao || '')
+              : (s.descricao_pt || s.descricao || s.descricao_en || s.descricao_es || '')
+            const icon = s.icon_class || 'fas fa-briefcase'
+            return `
+              <div class="premium-card text-center animate-on-scroll">
+                <div class="w-16 h-16 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="${icon} text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-poppins font-bold text-vip-black mb-4">${title}</h3>
+                ${desc ? `<p class=\"text-gray-600 mb-6\">${desc}</p>` : ''}
+                <button data-whatsapp="services" data-service="${s.nome}" class="premium-button w-full justify-center">
+                  <i class="fab fa-whatsapp"></i>
+                  <span data-i18n="btn.reserve">Reservar Agora</span>
+                </button>
+              </div>
+            `
+          }).join('')
+          grid.innerHTML = cards
+        } catch {}
+      }
+      if (!grid.innerHTML) {
+        const fallback = [
+          { icon: 'fas fa-plane', title: 'Transfer Aeroporto', desc: 'Recepção personalizada no desembarque e monitoramento de voos.' },
+          { icon: 'fas fa-briefcase', title: 'Transporte Corporativo', desc: 'Serviço executivo com motoristas bilíngues e pontualidade.' },
+          { icon: 'fas fa-map-marked-alt', title: 'City Tour VIP', desc: 'Passeios exclusivos pelos pontos icônicos do Rio.' }
+        ]
+        grid.innerHTML = fallback.map(s => `
+          <div class="premium-card text-center animate-on-scroll">
+            <div class="w-16 h-16 bg-gradient-to-br from-vip-gold to-vip-gold-dark rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="${s.icon} text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-poppins font-bold text-vip-black mb-4">${s.title}</h3>
+            <p class="text-gray-600 mb-6">${s.desc}</p>
+            <button data-whatsapp="services" data-service="${s.title}" class="premium-button w-full justify-center">
+              <i class="fab fa-whatsapp"></i>
+              <span data-i18n="btn.reserve">Reservar Agora</span>
+            </button>
+          </div>
+        `).join('')
+      }
+      grid.querySelectorAll('.animate-on-scroll').forEach(el => el.classList.add('animated'))
+      try { new ScrollAnimations() } catch {}
+      if (window.I18N) window.I18N.apply()
+    }
   }
 }
 
